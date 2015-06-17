@@ -1,0 +1,23 @@
+                                            CODE BOOK: tidySORM
+
+Variable	Extracted Directly	Calculated     Comment
+--------        ------------------      -----------    ---------------
+code	               Yes	            No         character string; a Texas state entity code assigned to uniquely identify the entity
+clientname	       Yes	            No         character string
+fte 	               Yes	            No         numeric; full-time equivalant employees
+assessmentdollars      Yes	            No         numeric; expressed in U.S. dollars
+payrolldollars	       Yes	            No         numeric; expressed in U.S. dollars
+numberclaims	       Yes	            No         numeric; number of worker compensation claims
+costdollars	       Yes	            No         numeric; claims cost expressed in U.S. dollars
+capnumclaims	       Yes	            No         numeric; the cap on assessment due to number of claims, expressed in U.S. dollars
+capclaimscost	       Yes	            No         numeric; the cap on assessment due to number of claims cost, expressed in U.S. dollars
+fiscalyear	       No	            Yes        numeric; based on naming convention used
+costperfte	       No	            Yes        numeric; costdollars / fte
+ifr                    No	            Yes        numeric; injury frequency rate; injuries per one hundred fte per year
+                                                       (numberclaims / fte) * 100
+wbhistory	       No	            Yes        character string with values of "initial", "final", "updated"
+code.year 	       No	            Yes        character string; used as a unique identifier for each row;concatenation of 
+                                                       code,”.”,fiscalyear
+
+Extracted means the value was copied from an assessment workbook.  Calculated means the values of the variable were calcuated using R
+code rather than being extracted from assessment workbooks directly.
